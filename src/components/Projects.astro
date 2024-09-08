@@ -2,6 +2,7 @@
 import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import Javascript from "./icons/Javascript.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
@@ -16,6 +17,11 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[black]  text-white",
+    icon: Javascript,
+  }
 }
 const PROJECTS = [
   {
@@ -27,6 +33,15 @@ const PROJECTS = [
     image: "/projects/jobfinder.png",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
+  {
+    title: "Sokoban - Classic puzzle game",
+    description:
+      "Sokoban game built in JavaScript, inspired by a project from the book 'Eloquent JavaScript'. A puzzle-solving experience with classic gameplay.",
+    link: "",
+    github: "https://github.com/MatiasAlemany/sokoban-game.git",
+    image: "/projects/sokoban.png",
+    tags: [TAGS.JAVASCRIPT],
+  },  
   {
     title: "Next one is coming!",
     description:
