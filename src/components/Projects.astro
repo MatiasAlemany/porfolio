@@ -1,11 +1,11 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Javascript from "./icons/Javascript.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-import NestJS from "./icons/NestJS.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Javascript from "./icons/Javascript.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import NestJS from "./icons/NestJS.astro";
 
 const TAGS = {
   NEXT: {
@@ -27,13 +27,21 @@ const TAGS = {
     name: "NestJS",
     class: "bg-[black]  text-white",
     icon: NestJS,
-  }
-}
+  },
+};
 const PROJECTS = [
   {
-    title: "JobFinder - Website to find your next job",
+    title: "UniversoCoffee - Specialty Coffee Ecommerce & Events",
     description:
-      "Platform to search for work in a specific country. Built from scratch with Next.js, React and Tailwind CSS, Prisma as ORM.",
+      "A modern e-commerce platform for selling specialty coffee, offering barista courses, and promoting coffee-related events. Built from scratch with Next.js, TypeScript, Tailwind CSS, Drizzle ORM, and Turso database. It also integrates ShadCN for UI components, Cloudinary for media management, and OAuth for secure authentication.",
+    link: "https://www.universocoffee.com.ar",
+    image: "/projects/universoCoffee.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "JobFinder - Job Search Platform",
+    description:
+      "A web platform designed to help users find job opportunities based on their location and preferences. Built with Next.js, JavaScript, and Tailwind CSS, it leverages Prisma ORM with a MySQL database hosted on AWS. The application is deployed on Vercel.",
     link: "https://jobsearchapp.vercel.app/",
     github: "https://github.com/MatiasAlemany/jobsearch-app.git",
     image: "/projects/jobfinder.png",
@@ -47,7 +55,7 @@ const PROJECTS = [
     github: "https://github.com/MatiasAlemany/sokoban-game.git",
     image: "/projects/sokoban.png",
     tags: [TAGS.JAVASCRIPT],
-  },  
+  },
   {
     title: "ChatBot",
     description:
@@ -55,63 +63,66 @@ const PROJECTS = [
     link: "https://chatbot-uii-livid.vercel.app/",
     github: "https://github.com/MatiasAlemany/chatbot-openai_api",
     image: "/projects/chatternest.png",
-    tags: [TAGS.NESTJS,TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.NESTJS, TAGS.NEXT, TAGS.TAILWIND],
   },
-]
+];
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 ">
-  <div class="w-full  md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <div class="h-64 w-full flex items-center justify-center overflow-hidden">
-            <img alt="Proyect Image" class="object-cover w-full h-full transition duration-500 md:group-hover:scale-105" loading="lazy" src={image} />
-          </div>        
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group">
+        <div class="w-full">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <div class="h-64 w-full flex items-center justify-center overflow-hidden">
+              <img
+                alt="Proyect Image"
+                class="object-cover w-full h-full transition duration-500 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </div>
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
