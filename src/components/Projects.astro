@@ -6,6 +6,8 @@ import Javascript from "./icons/Javascript.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 import NestJS from "./icons/NestJS.astro";
+import Java from "./icons/Java.astro"
+import Spring from "./icons/Spring.astro"
 
 const TAGS = {
   NEXT: {
@@ -28,6 +30,16 @@ const TAGS = {
     class: "bg-[black]  text-white",
     icon: NestJS,
   },
+  JAVA: {
+    name: "Java",
+    class: "bg-[white] text-red-600",
+    icon: Java,
+  },
+  SPRING: {
+    name: "Spring",
+    class: "bg-[black] text-white",
+    icon: Spring,
+  }
 };
 const PROJECTS = [
   {
@@ -64,6 +76,14 @@ const PROJECTS = [
     github: "https://github.com/MatiasAlemany/chatbot-openai_api",
     image: "/projects/chatternest.png",
     tags: [TAGS.NESTJS, TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "Dinning Review API",
+    description:
+      "REST API developed with Java and Spring Boot to manage restaurant reviews. It allows users to leave opinions and evaluations about different establishments, storing the information in a structured way in a database.",
+    github: "https://github.com/MatiasAlemany/DinningReviewAPI-JAVA",
+    image: "/projects/spring.png",
+    tags: [TAGS.JAVA, TAGS.SPRING],
   },
 ];
 ---
