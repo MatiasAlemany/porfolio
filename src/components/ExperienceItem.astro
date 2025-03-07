@@ -1,16 +1,18 @@
 ---
-import LinkInline from "./LinkInline.astro"
+import LinkInline from "./LinkInline.astro";
 
 interface Props {
-  title: string
-  company: string
-  description: string
-  link?: string
-  date: string
-  location: string
+  title: string;
+  company: string;
+  description: string[];
+  link?: string;
+  date: string;
+  location: string;
 }
 
-const { title, company, description, link, date, location } = Astro.props
+const { title, company, description, link, date, location } = Astro.props;
+const descriptions = Array.isArray(description) ? description : [description]
+
 ---
 
 <div
@@ -23,13 +25,22 @@ const { title, company, description, link, date, location } = Astro.props
       >
 
       <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
-      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
-      <p class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{location}</p>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
+      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">
+        {company}
+      </h4>
+      <p class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">
+        {location}
+      </p>
+      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
+        >{date}</time
+      >
     </div>
   </div>
-  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    {description}
+  <div
+    class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"
+  >
+    {description.map((item) => <ul> <li class="leading-relaxed text-base transition-all duration-300 hover:text-yellow-400">{item}</li>
+    </ul>)}
     {
       link && (
         <LinkInline href={link}>

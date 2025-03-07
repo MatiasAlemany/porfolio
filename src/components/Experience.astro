@@ -1,31 +1,43 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
 const EXPERIENCIE = [
-{
+  {
     date: "Nov 2024 – Present",
     title: "Freelance Full-Stack Developer",
     company: "AlemanyCode",
-    description:"Diseñé y desarrollé aplicaciones web modernas utilizando tecnologías como Next.js, TypeScript y Javascript. Implementé bases de datos MySQL y optimicé consultas para mejorar la eficiencia del backend. Integración y consumo de APIs RESTful para ampliar las funcionalidades de las aplicaciones. Desplegué proyectos en AWS y Vercel asegurando alta disponibilidad y rendimiento. Uso de Git para el control de versiones, facilitando la colaboración y el seguimiento de cambios.",
-    location: "Valencia, Spain"
+    description: [
+      "Designed and developed modern web applications using technologies like Next.js, TypeScript, and JavaScript.",
+      "Implemented MySQL databases and optimized queries to improve backend efficiency.",
+      "Integrated and consumed RESTful APIs to enhance application functionalities.",
+      " Deployed projects on AWS and Vercel ensuring high availability and performance.",
+      "Used Git for version control, facilitating collaboration and change tracking.",
+    ],
+    location: "Valencia, Spain",
   },
   {
     date: "Jun 2023 – Aug 2024",
     title: "Software Developer Internship",
     company: "Pl4yOps",
-    description:
-      "Gained hands-on experience in full-stack development by working with modern technologies such as React, Node.js, Next.js, NestJS, Java, TypeScript, and JavaScript. Contributed to web application development, database management with MySQL, and containerization with Docker. Explored cloud solutions using AWS and implemented backend services with Express.",
-      link: "https://www.pl4yops.com/",
-      location:"Dublin, Ireland"
+    description: [
+      "Collaborated on web application development using Node.js, React, and Java.",
+      "Gained experience with Docker containers to improve application portability.",
+      "Learned agile methodologies working in an international team.",
+      "Developed APIs with Spring Boot, contributing to a more modular and scalable architecture.",
+    ],
+    link: "https://www.pl4yops.com/",
+    location: "Dublin, Ireland",
   },
   {
     date: "Apr 2022 – May 2023",
     title: "System Administrator",
     company: "Fabilor E Hijos SRL",
-    description:
-      "Data management, data backup, troubleshooting, production planning, documentation and configuration management, system implementation.",
-      location:"Buenos Aires, Argentina"
+    description: [
+      "Managed the implementation of an ERP system, improving the company's data organization.",
+      "Troubleshot technical issues and optimized production processes.",
+    ],
+    location: "Buenos Aires, Argentina",
   },
-]
+];
 ---
 
 <ol class="relative mt-16">

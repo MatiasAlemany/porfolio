@@ -8,6 +8,7 @@ import LinkButton from "./LinkButton.astro";
 import NestJS from "./icons/NestJS.astro";
 import Java from "./icons/Java.astro"
 import Spring from "./icons/Spring.astro"
+import TypeScript from "./icons/TypeScript.astro";
 
 const TAGS = {
   NEXT: {
@@ -39,6 +40,11 @@ const TAGS = {
     name: "Spring",
     class: "bg-[black] text-white",
     icon: Spring,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#003159] text-white",
+    icon: TypeScript,
   }
 };
 const PROJECTS = [
@@ -48,7 +54,7 @@ const PROJECTS = [
       "A modern e-commerce platform for selling specialty coffee, offering barista courses, and promoting coffee-related events. Built from scratch with Next.js, TypeScript, Tailwind CSS, Drizzle ORM, and Turso database. It also integrates ShadCN for UI components, Cloudinary for media management, and OAuth for secure authentication.",
     link: "https://www.universocoffee.com.ar",
     image: "/projects/universoCoffee.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
     title: "JobFinder - Job Search Platform",
@@ -57,7 +63,7 @@ const PROJECTS = [
     link: "https://jobsearchapp.vercel.app/",
     github: "https://github.com/MatiasAlemany/jobsearch-app.git",
     image: "/projects/jobfinder.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.NEXT, TAGS.JAVASCRIPT , TAGS.TAILWIND],
   },
   {
     title: "Sokoban - Classic puzzle game",
@@ -75,7 +81,7 @@ const PROJECTS = [
     link: "https://chatbot-uii-livid.vercel.app/",
     github: "https://github.com/MatiasAlemany/chatbot-openai_api",
     image: "/projects/chatternest.png",
-    tags: [TAGS.NESTJS, TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.NESTJS, TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
     title: "Dinning Review API",
@@ -85,13 +91,22 @@ const PROJECTS = [
     image: "/projects/spring.png",
     tags: [TAGS.JAVA, TAGS.SPRING],
   },
+  {
+    title: "Podcaster",
+    description:
+      "This project interacts with the iTunes API to display the Top 100 most popular podcasts, their episodes, and an integrated player to listen to them. Built with Next.js and TypeScript, it offers a modern and responsive user experience.",
+    link: "https://podcaster-plum.vercel.app/",
+      github: "https://github.com/MatiasAlemany/Podcaster.git",
+    image: "/projects/podcaster3.png",
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
 ];
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group">
+      <article class="flex h-full flex-col space-x-0 space-y-8 group">
         <div class="w-full">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <div class="h-64 w-full flex items-center justify-center overflow-hidden">
